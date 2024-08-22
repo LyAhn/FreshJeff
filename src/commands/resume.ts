@@ -26,7 +26,7 @@ export default class implements Command {
     const player = this.playerManager.get(interaction.guild!.id);
     const [targetVoiceChannel] = getMemberVoiceChannel(interaction.member as GuildMember) ?? getMostPopularVoiceChannel(interaction.guild!);
     if (player.status === STATUS.PLAYING) {
-      throw new Error('already playing, give me a song name');
+      throw new Error('Music is already playing. Use the /play command to add a new song or /skip if the track has frozen.');
     }
 
     // Must be resuming play
@@ -38,7 +38,7 @@ export default class implements Command {
     await player.play();
 
     await interaction.reply({
-      content: 'the stop-and-go light is now green',
+      content: 'Music resumed ▶️',
       embeds: [buildPlayingMessageEmbed(player)],
     });
   }

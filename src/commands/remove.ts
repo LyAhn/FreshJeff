@@ -33,11 +33,11 @@ export default class implements Command {
     const range = interaction.options.getInteger('range') ?? 1;
 
     if (position < 1) {
-      throw new Error('position must be at least 1');
+      throw new Error('Position must be at least 1');
     }
 
     if (range < 1) {
-      throw new Error('range must be at least 1');
+      throw new Error('Range must be at least 1');
     }
 
     player.removeFromQueue(position, range);

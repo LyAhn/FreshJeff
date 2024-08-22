@@ -33,11 +33,11 @@ export default class implements Command {
     const to = interaction.options.getInteger('to') ?? 1;
 
     if (from < 1) {
-      throw new Error('position must be at least 1');
+      throw new Error('Position must be at least 1');
     }
 
     if (to < 1) {
-      throw new Error('position must be at least 1');
+      throw new Error('Position must be at least 1');
     }
 
     const {title} = player.move(from, to);
