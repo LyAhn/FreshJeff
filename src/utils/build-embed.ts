@@ -72,7 +72,7 @@ export const buildPlayingMessageEmbed = (player: Player): EmbedBuilder => {
 
   if (thumbnailUrl) {
     message.setThumbnail(thumbnailUrl);
-  }
+  } 
 
   return message;
 };
@@ -81,14 +81,14 @@ export const buildQueueEmbed = (player: Player, page: number): EmbedBuilder => {
   const currentlyPlaying = player.getCurrent();
 
   if (!currentlyPlaying) {
-    throw new Error('queue is empty');
+    throw new Error('The queue is empty');
   }
 
   const queueSize = player.queueSize();
   const maxQueuePage = Math.ceil((queueSize + 1) / PAGE_SIZE);
 
   if (page > maxQueuePage) {
-    throw new Error('the queue isn\'t that big');
+    throw new Error('The queue isn\'t that big');
   }
 
   const queuePageBegin = (page - 1) * PAGE_SIZE;
