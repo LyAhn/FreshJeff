@@ -72,7 +72,7 @@ export const buildPlayingMessageEmbed = (player: Player): EmbedBuilder => {
 
   if (thumbnailUrl) {
     message.setThumbnail(thumbnailUrl);
-  } 
+  }
 
   return message;
 };
